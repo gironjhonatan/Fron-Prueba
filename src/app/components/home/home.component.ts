@@ -1,27 +1,26 @@
 import { Component, OnInit } from '@angular/core';
+import { CommonModule } from '@angular/common';  
 import { ApiService } from '../../service/api.service';
-
 
 @Component({
   selector: 'app-home',
   standalone: true,
-  imports: [],
+  imports: [CommonModule], 
   templateUrl: './home.component.html',
-  styleUrl: './home.component.css',
+  styleUrls: ['./home.component.css'],  
 })
 export class HomeComponent implements OnInit {
   data: any[] = [];
 
-  constructor(private ApiService: ApiService) {}
+  constructor(private apiService: ApiService) {}
 
   ngOnInit(): void {
     this.datos();
   }
 
   datos() {
-    this.ApiService.getProducts().subscribe((data: any) => {
+    this.apiService.getProducts().subscribe((data: any) => {
       this.data = data;
-      console.log(this.data);
     });
   }
 }

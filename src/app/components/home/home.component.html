@@ -1,1 +1,32 @@
-<p>home works!</p>
+<div class="product-data-container">
+    <h1>Datos de los productos</h1>
+    <table class="product-data-table">
+        <thead>
+            <tr>
+                <th>Código</th>
+                <th>Descripción</th>
+                <th>Imagen</th>
+                <th>Precio</th>
+                <th>Nombre</th>
+                <th>IVA</th>
+                <th>Para la Venta</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of data">
+                <td>{{item.codigo}}</td>
+                <td>{{item.descripcion}}</td>
+                <td>
+                    <ng-container *ngIf="item.imagen; else noImage">
+                        <img [src]="item.imagen" alt="Imagen del producto">
+                    </ng-container>
+                    <ng-template #noImage>No hay imagen para este producto</ng-template>
+                </td>
+                <td>{{item.listaDePrecios[0]}}</td>
+                <td>{{item.nombre}}</td>
+                <td>{{item.porcentajeIva}}%</td>
+                <td>{{item.productoParaLaVenta ? 'Sí' : 'No'}}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
