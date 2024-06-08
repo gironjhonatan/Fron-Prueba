@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { CommonModule } from '@angular/common';  
 import { ApiService } from '../../service/api.service';
+import Swal from 'sweetalert2';
 
 @Component({
   selector: 'app-home',
@@ -23,4 +24,13 @@ export class HomeComponent implements OnInit {
       this.data = data;
     });
   }
+
+  opcionNoDisponible() {
+    Swal.fire({
+      title: 'Opción no disponible',
+      text: 'Lo sentimos, esta opción aún no está disponible',
+      icon: 'info',
+      confirmButtonText: 'Entendido'
+    });
+  }  
 }

@@ -48,3 +48,25 @@
 .product-data-table td {
     vertical-align: middle;
 }
+
+/* Estilos para los botones */
+.product-data-table button {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+}
+
+.product-data-table button:hover {
+    background-color: #45a049;
+}
+
+.product-data-table button:active {
+    background-color: #3e8e41;
+}

@@ -10,6 +10,7 @@
                 <th>Nombre</th>
                 <th>IVA</th>
                 <th>Para la Venta</th>
+                <th>Acciones</th> <!-- Nueva columna para acciones -->
             </tr>
         </thead>
         <tbody>
@@ -26,6 +27,11 @@
                 <td>{{item.nombre}}</td>
                 <td>{{item.porcentajeIva}}%</td>
                 <td>{{item.productoParaLaVenta ? 'Sí' : 'No'}}</td>
+                <td>
+                    <button (click)="opcionNoDisponible()">Ver</button> 
+                    <button (click)="opcionNoDisponible()">Actualizar</button> 
+                    <button (click)="opcionNoDisponible()">Eliminar</button> 
+                </td>
             </tr>
         </tbody>
     </table>
